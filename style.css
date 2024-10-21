@@ -1,0 +1,23 @@
+#info {
+    position: absolute;
+    top: 50%;                /* Puts it vertically in the center */
+    left: 50%;               /* Puts it horizontally in the center */
+    transform: translate(-50%, -50%);  /* Ensures it is centered perfectly */
+    font-weight: bold;        /* Makes the text bold */
+    font-size: 24px;          /* Adjusts the font size for better visibility */
+    color: white;             /* Sets the text color */
+    text-align: center;       /* Centers the text horizontally */
+    z-index: 100;             /* Ensures it is on top of other elements */
+    display: block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow effect */
+    animation: fadeIn 2s ease-in-out; /* Adds a simple fade-in effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
