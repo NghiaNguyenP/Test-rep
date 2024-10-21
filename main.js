@@ -51,3 +51,4 @@ function animate(){
     renderer.render(scene, camera);
 }
 renderer.setAnimationLoop(animate)
+//just a test comment
