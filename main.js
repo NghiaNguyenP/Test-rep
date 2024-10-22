@@ -27,16 +27,23 @@ scene.add(axesHelper)
 //     console.error(error);
 // });
 
-
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 const gui = new dat.GUI();
-const options = {cubeColor: '#ffea00'};
+const options = {
+    cubeColor: '#ffea00',
+    wireframe: false,
+    spinspeed: 0.1,
+    bouncespeed: 0.1
+};
 gui.addColor(options, 'cubeColor').onChange(function(e){
     cube.material.color.set(e)
 });
+gui.add(options, 'wireframe').onChange(function(e){
+    cube.material.wireframe = e
+})
 
 // const light = new THREE.AmbientLight(0x666600, 1); // Ambient light
 // scene.add(light);
@@ -46,9 +53,9 @@ gui.addColor(options, 'cubeColor').onChange(function(e){
 // scene.add(dirLight);
 
 function animate(){
-    cube.rotation.x += 0.01
+    cube.rotation.x += 0.01 
     cube.rotation.y += 0.01
     renderer.render(scene, camera);
 }
 renderer.setAnimationLoop(animate)
-//just a test comment
+// just a test comment
